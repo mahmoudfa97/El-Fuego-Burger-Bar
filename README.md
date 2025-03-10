@@ -1,6 +1,6 @@
 # El Fuego Burger Bar
 
-![El Fuego Burger Bar](https://placeholder.svg?height=300&width=800&text=El+Fuego+Burger+Bar)
+![El Fuego Burger Bar](https://elfuego.vercel.app/)
 
 A full-stack Next.js application for a Mexican-themed burger restaurant with bilingual support (English/Spanish), responsive design, and interactive UI components.
 
