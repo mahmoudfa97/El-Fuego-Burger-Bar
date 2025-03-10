@@ -31,7 +31,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center overflow-hidden bg-gradient-to-r from-amber-600 to-red-700 px-4 py-24 text-center md:py-32">
-        <div className="absolute inset-0 z-0 opacity-20 bg-[url('/placeholder.svg?height=800&width=1200')] bg-cover bg-center bg-no-repeat"></div>
+        <div className="absolute inset-0 z-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1565299507177-b0ac66763828?q=80&w=1664&auto=format&fit=crop')] bg-cover bg-center bg-no-repeat"></div>
         <div className="relative z-10 max-w-4xl space-y-5">
           <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
             <span className="block">{t("welcome")}</span>
