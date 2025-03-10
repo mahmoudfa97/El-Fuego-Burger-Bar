@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   title: "El Fuego Burger Bar | Authentic Mexican Burgers",
   description:
     "Experience the fiesta of flavors at El Fuego Burger Bar, where authentic Mexican cuisine meets gourmet burgers.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: { url: "/apple-touch-icon.png", sizes: "180x180" },
+  },
 }
 
 export default function RootLayout({
