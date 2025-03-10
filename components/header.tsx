@@ -1,11 +1,12 @@
 "use client"
 
 import Link from "next/link"
-import { Menu, ShoppingBag } from "lucide-react"
+import { Menu } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { LanguageSwitcher } from "@/components/language-switcher"
+import { Cart } from "@/components/cart"
 
 export default function HeaderWithLanguage() {
   const { t } = useLanguage()
@@ -59,10 +60,7 @@ export default function HeaderWithLanguage() {
         </div>
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
-          <Button variant="ghost" size="icon">
-            <ShoppingBag className="h-5 w-5" />
-            <span className="sr-only">Shopping cart</span>
-          </Button>
+          <Cart />
           <Button className="hidden bg-red-600 hover:bg-red-700 md:inline-flex">{t("orderNow")}</Button>
         </div>
       </div>

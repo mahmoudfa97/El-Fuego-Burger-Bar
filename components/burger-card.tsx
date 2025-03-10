@@ -4,11 +4,13 @@ import { useState } from "react"
 import Image from "next/image"
 import { ChevronDown, ChevronUp, ShoppingCart } from "lucide-react"
 import { useLanguage } from "@/contexts/language-context"
+import { useCart } from "@/contexts/cart-context"
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import type { Burger } from "@/lib/types"
+import { toast } from "@/components/ui/use-toast"
 
 interface BurgerCardProps {
   burger: Burger
@@ -17,9 +19,19 @@ interface BurgerCardProps {
 export default function BurgerCard({ burger }: BurgerCardProps) {
   const [expanded, setExpanded] = useState(false)
   const { t, language } = useLanguage()
+  const { addToCart } = useCart()
 
   // Get the appropriate description based on language
   const description = language === "es" && burger.descriptionEs ? burger.descriptionEs : burger.description
+
+  const handleAddToCart = () => {
+    addToCart(burger)
+    toast({
+      title: t("addedToCart"),
+      description: burger.name,
+      duration: 2000,
+    })
+  }
 
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-md">
@@ -77,8 +89,8 @@ export default function BurgerCard({ burger }: BurgerCardProps) {
         )}
       </CardContent>
       <CardFooter>
-        <Button className="w-full bg-red-600 hover:bg-red-700">
-          <ShoppingCart className="mr-2 h-4 w-4" /> {t("addToOrder")}
+        <Button className="w-full bg-red-600 hover:bg-red-700" onClick={handleAddToCart}>
+          <ShoppingCart className="mr-2 h-4 w-4" /> {t("addToCart")}
         </Button>
       </CardFooter>
     </Card>
